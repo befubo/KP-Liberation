@@ -115,7 +115,7 @@ air_vehicles = [
     ["BWA3_Tiger_RMK_Heavy",2000,2000,2000],
     ["RHS_AH1Z_wd",2000,2300,2000],
     ["RHS_AH64D_wd",2000,2600,2000],
-    ["RHS_Mi24V_vdv",2400,2600,2000],
+    ["rhsgref_mi24g_CAS",2400,2000,2000],
     ["rhsusf_f22",3000,2500,2800],
     ["rhs_mig29sm_vvsc",2800,2700,2800],
     ["I_Plane_Fighter_03_dynamicLoadout_F",2800,3000,2800],
