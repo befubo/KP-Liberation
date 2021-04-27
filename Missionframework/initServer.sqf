@@ -256,6 +256,7 @@ hs_spawn = compileFinal "
 
 if (isServer) then {
 	while {true} do {
+		[]execVM "MilSimUnited\ieds.sqf";
 		[] spawn hs_spawn;
 		sleep 60;
 	};
