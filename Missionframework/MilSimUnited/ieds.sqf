@@ -80,12 +80,13 @@ _firstRound = 1;
 		} foreach _checkPlayers;
 		
 		if(_playerNear == 0) then {
-			_randSpawnPos = _pos getPos [_roadWidth * sqrt random 1, random 360];
+			_spawnRadius = (_roadWidth / 2) + 1;
+			_randSpawnPos = _pos getPos [_spawnRadius * sqrt random 1, random 360];
 			_usedMine = selectRandom _mineClassnames;
 			_mine = createMine [_usedMine, _randSpawnPos, [], 0];
 			
-			_rand = random 2;
-			if(_rand == 1) then {
+			_randJunk = [1,2] call BIS_fnc_randomInt;
+			if(_randJunk == 1) then {
 				_spawnJunk = createVehicle ["Land_Garbage_square5_F", _randSpawnPos, [], 0, "CAN_COLLIDE"];
 			};
 		};

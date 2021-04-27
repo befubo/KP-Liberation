@@ -267,6 +267,3 @@ if (isServer) then {
     KPLIB_initServer = true;
     publicVariable "KPLIB_initServer";
 };
-
-
-[[], 'MilSimUnited\iedScript.sqf'] remoteExec ['BIS_fnc_execVM', 2];

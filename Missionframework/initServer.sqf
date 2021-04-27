@@ -253,7 +253,7 @@ if (isServer) then {
 	while {true} do {
 		
 		[]execVM "MilSimUnited\ieds.sqf" ;
-		sleep 60;
+		sleep 10;
 		
 	};
 };
