@@ -257,7 +257,7 @@ SA_TOW_RULES_OVERRIDE =[
 
 //[AiCacheDistance(players),TargetFPS(-1 for Auto),Debug,CarCacheDistance,AirCacheDistance,BoatCacheDistance]execvm "zbe_cache\main.sqf";
 
-if (isServer) then {[600,-1,false,100,100,100]execvm "zbe_cache\main.sqf"};
+if (isServer) then {[2000,-1,false,100,100,100]execvm "zbe_cache\main.sqf"};
 
 
 
