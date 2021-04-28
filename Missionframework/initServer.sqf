@@ -1,4 +1,3 @@
-GRLIB_all_fobs = "";
 
 hs_MPhint = { hint _this };
 /* USE:
@@ -220,13 +219,12 @@ hs_spawn = compileFinal "
 				};
 			} forEach allPlayers;
 			
-			if(!isNil GRLIB_all_fobs) then {
-				{
-					if ((getPos _player) distance _x < 500) then {
-						_too_close = true;
-					};
-				} foreach GRLIB_all_fobs;
-			};
+			
+			{
+				if ((getPos _player) distance _x < 500) then {
+					_too_close = true;
+				};
+			} foreach GRLIB_all_fobs;
 			
 			
 			if (_too_close == false) then {
