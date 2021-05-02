@@ -5,6 +5,9 @@ private _vehicleClass = toLower (typeOf _vehicle);
 private _isCargo = (_vehicle getCargoIndex player) != -1;
 if (_isCargo || _vehicle isKindOf "ParachuteBase") exitWith {};
 
+_roleArray = assignedVehicleRole player; //Mil Sim United edit, allows turrets be manned without permissions
+if (_roleArray select 0 == "turret") exitWith {};
+
 private _permissibleVehicles = [
     [KPLIB_typeLightClasses, "STR_PERMISSION_NO_LIGHT"],
     [KPLIB_typeHeavyClasses, "STR_PERMISSION_NO_ARMOR"],
