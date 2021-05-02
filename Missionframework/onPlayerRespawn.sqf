@@ -1,5 +1,4 @@
 waitUntil {!isNil "KPLIB_initServer"};
-
 params ["_newUnit", "_oldUnit"];
 
 if (isNil "GRLIB_respawn_loadout") then {
@@ -20,6 +19,8 @@ if (isNil "GRLIB_respawn_loadout") then {
 };
 
 [] call KPLIB_fnc_addActionsPlayer;
+
+[player] execVM "MilSimUnited\logAction.sqf";
 
 // Support Module handling
 if ([
