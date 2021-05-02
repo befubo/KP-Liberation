@@ -235,15 +235,15 @@ hs_spawn = compileFinal "
 				_wp1_spawn setWaypointBehaviour 'AWARE';
 				_wp1_spawn setWaypointSpeed 'FULL';
 
-				_wp2_spawn = _group_spawn addWaypoint [getPosWorld _player, 400];
+				_wp2_spawn = _group_spawn addWaypoint [getPos _player, 400];
 
-				_wp3_spawn = _group_spawn addWaypoint [getPosWorld _player, 400];
+				_wp3_spawn = _group_spawn addWaypoint [getPos _player, 400];
 
-				_wp4_spawn = _group_spawn addWaypoint [getPosWorld _player, 400];
+				_wp4_spawn = _group_spawn addWaypoint [getPos _player, 400];
 
-				_wp5_spawn = _group_spawn addWaypoint [getPosWorld _player, 400];
+				_wp5_spawn = _group_spawn addWaypoint [getPos _player, 400];
 
-				_wp6_spawn = _group_spawn addWaypoint [getPosWorld _player, 400];
+				_wp6_spawn = _group_spawn addWaypoint [getpos _player, 400];
 				_wp6_spawn setWaypointStatements ['true', '{deleteVehicle _x} forEach thisList;'];
 			};
 		};
