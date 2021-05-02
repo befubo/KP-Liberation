@@ -335,6 +335,23 @@ while { true } do {
                     _vehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
                     { _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } foreach (crew _vehicle);
                 };
+				
+				//Mil Sim edit, log players action
+				_playerActions = profileNamespace getVariable ["KV13_LogPlayerActions", []];
+				if(count _playerActions > 40) then {
+					reverse _playerActions;
+					_playerActions resize 40;
+					reverse _playerActions;
+				};
+				_username = name player;
+				_uid = getPlayerUID player;
+				_currentTime = systemTime;
+				_playerActions append [[_username,_uid,_classname,_currentTime]];
+				
+				profileNamespace setVariable ["KV13_LogPlayerActions", _playerActions];
+				saveProfileNamespace;
+				///////////////////////////////////
+				
             };
 
             if ( _idactcancel != -1 ) then {
