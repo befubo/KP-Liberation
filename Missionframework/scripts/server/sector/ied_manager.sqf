@@ -1,5 +1,7 @@
 params ["_sector", "_radius", "_number"];
 
+_number = 0; //MilSim United edit to disable IED Spawning in Zones
+
 if (_number <= 0) exitWith {};
 
 if (KP_liberation_asymmetric_debug > 0) then {[format ["ied_manager.sqf for %1 spawned on: %2", markerText _sector, debug_source], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
