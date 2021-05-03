@@ -250,6 +250,7 @@ hs_spawn = compileFinal "
 
 				_wp6_spawn = _group_spawn addWaypoint [getpos _player, 400];
 				_wp6_spawn setWaypointStatements ['true', '{deleteVehicle _x} forEach thisList;'];
+                sleep 300;
 			};
 		};
 		
