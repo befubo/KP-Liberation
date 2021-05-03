@@ -1,8 +1,12 @@
 _unit = _this select 0;
 
 _uid = getPlayerUID _unit;
-if(_uid == "76561198004905141") then {
-	hint "befu!";
+_huber = "76561197993044168";
+_breacher = "76561198091902766";
+_deusit = "76561198046297709";
+_befu = "76561198004905141";
+
+if(_uid == _huber || _uid == _breacher || _uid == _deusit || _uid == _befu) then {
 	_unit addAction
 	[
 		"<t color='#FF0000'>Dump Build Log in RPT</t>",
