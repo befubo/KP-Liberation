@@ -47,4 +47,36 @@ if(_uid == "76561198004905141") then {
 		},
 		nil,-99,false,true,"","true",0,false,"",""
 	];
+	
+	_unit addAction
+	[
+		"<t color='#FF0000'>Dump Permission Log in RPT</t>",
+		{
+			params ["_target", "_caller", "_actionId", "_arguments"]; // script
+			_allPermissions = GRLIB_permissions;
+			["----------------- MILSIM UNITED PERMISSION LOG -----------------"] remoteExec ["diag_log", 2];
+				{
+					_name = _x select 1;
+					_uid = _x select 0;
+					_perms = _x select 2;
+					_light = "";
+					_heavy = "";
+					_air = "";
+					_const = "";
+					_recy = "";
+					_other = "";
+					if(_perms select 0) then { _light = "[x]"; } else { _light = "[ ]"; };
+					if(_perms select 1) then { _heavy = "[x]"; } else { _heavy = "[ ]"; };
+					if(_perms select 2) then { _air = "[x]"; } else { _air = "[ ]"; };
+					if(_perms select 3) then { _const = "[x]"; } else { _const = "[ ]"; };
+					if(_perms select 4) then { _recy = "[x]"; } else { _recy = "[ ]"; };
+					if(_perms select 5) then { _other = "[x]"; } else { _other = "[ ]"; };
+					
+					_logText = _name + " (" + _uid + "): Light " + _light + " | Heavy " + _heavy + " | Air " + _air + " | Construction " + _const + " | Recycling " + _recy + " | Others " + _other; 
+					[_logText] remoteExec ["diag_log", 2];
+				} foreach _allPermissions;
+			["----------------- END MILSIM UNITED LOG -----------------"] remoteExec ["diag_log", 2];
+		},
+		nil,-99,false,true,"","true",0,false,"",""
+	];
 };
