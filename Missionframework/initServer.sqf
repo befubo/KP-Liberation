@@ -205,7 +205,13 @@ hs_spawn = compileFinal "
 	
 	if(_count_players > 0) then {
 		
-		_hs_randomizer = floor(random 10);
+        _spawnChance = 10;
+        
+        if(_count_players < 5) then {_spawnChance = 30;};
+        if(_count_players >= 5 && _count_players < 15) then {_spawnChance = 20;};
+        if(_count_players >= 15) then {_spawnChance =10;};
+           
+		_hs_randomizer = floor(random _spawnchance);
 		
 		if( (_hs_randomizer < 2) && ((opfor countSide allGroups) < 140) ) then {
 			_player = selectRandom _humanPlayers;
