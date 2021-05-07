@@ -1,7 +1,4 @@
 
-
-
-
 hs_MPhint = { hint _this };
 /* USE:
 _hs_hint = format['_crate: %1', typeOf _crate];
@@ -208,7 +205,13 @@ hs_spawn = compileFinal "
 	
 	if(_count_players > 0) then {
 		
-		_hs_randomizer = floor(random 10);
+        _spawnChance = 10;
+        
+        if(_count_players < 5) then {_spawnChance = 30;};
+        if(_count_players >= 5 && _count_players < 15) then {_spawnChance = 20;};
+        if(_count_players >= 15) then {_spawnChance =10;};
+           
+		_hs_randomizer = floor(random _spawnchance);
 		
 		if( (_hs_randomizer < 2) && ((opfor countSide allGroups) < 140) ) then {
 			_player = selectRandom _humanPlayers;
@@ -222,13 +225,21 @@ hs_spawn = compileFinal "
 				};
 			} forEach allPlayers;
 			
+			
+			{
+				if ((getPos _player) distance _x < 500) then {
+					_too_close = true;
+				};
+			} foreach GRLIB_all_fobs;
+			
+			
 			if (_too_close == false) then {
 				_group_spawn = createGroup opfor;
 				
-				'LOP_ISTS_OPF_Infantry_AT' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
-				'LOP_ISTS_OPF_Infantry_Rifleman_9' createUnit [_spawn_position, _group_spawn, hs_spawn_init+hs_spawn_aa, 0.2, 'private']; sleep 1;
-				'LOP_ISTS_OPF_Infantry_Marksman' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
-				'LOP_ISTS_OPF_Infantry_AR_2' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
+				'LOP_AM_Infantry_AT' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
+				'LOP_AM_Infantry_SL' createUnit [_spawn_position, _group_spawn, hs_spawn_init+hs_spawn_aa, 0.2, 'private']; sleep 1;
+				'LOP_AM_Infantry_Marksman' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
+				'rhsgref_ins_g_specialist_aa' createUnit [_spawn_position, _group_spawn, hs_spawn_init, 0.2, 'private']; sleep 1;
 
 				_wp1_spawn = _group_spawn addWaypoint [getPosWorld _player, 100];
 				_wp1_spawn setwaypointtype 'MOVE';
@@ -245,6 +256,7 @@ hs_spawn = compileFinal "
 
 				_wp6_spawn = _group_spawn addWaypoint [getpos _player, 400];
 				_wp6_spawn setWaypointStatements ['true', '{deleteVehicle _x} forEach thisList;'];
+                sleep 300;
 			};
 		};
 		

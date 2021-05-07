@@ -62,7 +62,7 @@ militia_vehicles = [
 // All enemy vehicles that can spawn as sector defenders and patrols at high enemy combat readiness (aggression levels).
 opfor_vehicles = [
     "LOP_ISTS_OPF_Landrover_SPG9",
-    "LOP_ISTS_OPF_Nissan_PKM",
+    "LOP_ISTS_OPF_Landrover_M2",
     "LOP_ISTS_OPF_BTR60",
     "LOP_ISTS_OPF_BTR60",
     "LOP_ISTS_OPF_BTR60",
@@ -92,7 +92,7 @@ opfor_vehicles_low_intensity = [
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at high enemy combat readiness (aggression levels).
 opfor_battlegroup_vehicles = [
     "LOP_ISTS_OPF_Landrover_SPG9",
-    "LOP_ISTS_OPF_Nissan_PKM",
+    "LOP_ISTS_OPF_Landrover_M2",
     "LOP_TKA_Ural_open",
     "LOP_TKA_Ural",
     "LOP_ISTS_OPF_BTR60",

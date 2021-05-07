@@ -3,7 +3,7 @@
 
 
 
-Anpassungen für eine neues Liberation
+Anpassungen fÃ¼r eine neues Liberation
 ------------------------------------------------------------------------------------------
 
 
@@ -15,8 +15,11 @@ if (isServer) then { [] spawn gain_resources; };
 
 
 init.sqf: 
-Klassen-Anpassungen für z.B. ACE-Cargo 
+Klassen-Anpassungen fÃ¼r z.B. ACE-Cargo 
 Advanced Towing und Sling Loading Config
+
+
+Missionframework/scripts/client/build/do_build.sqf
 
 
 kp_liberation_config.sqf
@@ -38,7 +41,7 @@ isKindOf "Car" etc. Recycle-Werte
 stringtable.xml: "Tier 1- 4" als Fahrzeugbezeichnungen
 
 
-ui/liberation_build.hpp: austauschen für "Tier 1- 4" Fahrzeug-Icons
+ui/liberation_build.hpp: austauschen fÃ¼r "Tier 1- 4" Fahrzeug-Icons
 
 
 scripts/client/build/do_build_fob.sqf:
@@ -51,7 +54,7 @@ initPlayerLocal.sqf: Regeln und Situation
 
 Logo ersetzen: 
 Statt "res/lib.paa" und "res/splash_libe2.paa" muss "res/MilSimUnited.paa" aufgerufen werden
-	Dateiaufrufe ändern in:
+	Dateiaufrufe Ã¤ndern in:
 		\description.ext
 		ui\liberation_titles.hpp
 		ui\liberation_menu.hpp
