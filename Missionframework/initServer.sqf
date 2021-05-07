@@ -225,12 +225,14 @@ hs_spawn = compileFinal "
 				};
 			} forEach allPlayers;
 			
+			_allBases = GRLIB_all_fobs;
+			_allBases append [[4156.5,841.804,0]];
 			
 			{
 				if ((getPos _player) distance _x < 500) then {
 					_too_close = true;
 				};
-			} foreach GRLIB_all_fobs;
+			} foreach _allBases;
 			
 			
 			if (_too_close == false) then {
